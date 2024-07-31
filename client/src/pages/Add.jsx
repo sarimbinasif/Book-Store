@@ -67,9 +67,9 @@ function Add() {
                     name="cover"
                     value={book.cover}
                 />
+            <button onClick={handleClick}>Add</button>
             </div>
 
-            <button onClick={handleClick}>Add</button>
         </>
     );
 }

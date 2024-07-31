@@ -64,7 +64,8 @@ app.delete("/books/:id", (req,res)=>{
 
 app.put("/books/:id", (req,res)=>{
     const bookId = req.params.id;
-    const q = "UPDTATE books SET `title`=?, `description`=?, `price`=?, `cover`=? WHERE id=?"
+    // querry order and array order of variables must be same
+    const q = "UPDATE books SET `title`=?, `description`=?, `cover`=?, `price`=? WHERE id=?"
 
     const values = [
         req.body.title,
@@ -73,7 +74,7 @@ app.put("/books/:id", (req,res)=>{
         req.body.price,
     ]
 
-    db.query(q, [...values,bookId], (err,data)=>{
+    db.query(q, [...values, bookId], (err,data)=>{
         if(err) return res.json(err)
         return res.json("Book has been updated successfully!")
     })

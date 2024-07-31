@@ -1,14 +1,20 @@
 import express from "express"
 import mysql from  "mysql"
+import cors from "cors"
 
 const app = express();
+
+// without this we cant send json data to our server
+app.use(express.json())
+
+app.use(cors())
 
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "sarMysql123",
     database: "test",
-    port: "3306"
+    // port: "3306"
 });
 
 app.get("/", (req, res)=>{
@@ -24,6 +30,25 @@ app.get("/books", (req, res)=>{
 
         return res.json(data)
     })
+})
+
+
+app.post("/books", (req,res)=>{
+    const q="INSERT INTO books (`title`, `description`, `price`, `cover`) VALUES (?)"
+    const values = [
+        req.body.title,
+        req.body.description,
+        req.body.cover,
+        req.body.price,
+
+     
+    ]
+
+    db.query(q,[values], (err,data)=>{
+        if(err) return res.json(err)
+        return res.json("Book created successfuly!")
+    })
+
 })
 
 

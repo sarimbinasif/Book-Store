@@ -30,7 +30,7 @@ function Books() {
 
     return (
         <div>
-            <h1>Book Store</h1>
+            <h1 className="heading">Book Store</h1>
             <div className="books">
                 {books.map((book) => (
                     <div key={book.id} className="book"> 
@@ -38,14 +38,16 @@ function Books() {
                         <h2>{book.title}</h2>
                         <p>{book.description}</p>
                         <span>{book.price}</span>
-                        <button className="delete" onClick={()=>handleDelete(book.id)}>Delete</button>
-                        <button className="update"><Link to={`/update/${book.id}`}>Update</Link></button>
+                        <button className="delete" onClick={()=>handleDelete(book.id)}>Delete Book</button>
+                        <button className="update">
+                            <Link to={`/update/${book.id}`}>Update Book</Link>
+                            </button>
 
                     </div>
                 ))}
             </div>
 
-            <button> 
+            <button class = "addNewBookBtn"> 
                 
             <Link to="/add">
                 

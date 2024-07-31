@@ -45,7 +45,7 @@ function Update() {
     return (
         <>
             <div className="form">
-                <h1>Update Book</h1>
+                <h1 className="heading">Update Book</h1>
                 <input
                     type="text"
                     placeholder="Book Title here..."

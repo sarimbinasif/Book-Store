@@ -38,7 +38,9 @@ function Add() {
     return (
         <>
             <div className="form">
-                <h1>Add New Book</h1>
+                
+                <h1 className="heading" >Add New Book</h1>
+
                 <input
                     type="text"
                     placeholder="Book Title here..."
@@ -67,7 +69,7 @@ function Add() {
                     name="cover"
                     value={book.cover}
                 />
-            <button onClick={handleClick}>Add</button>
+            <button className="addBtn" onClick={handleClick}>Add</button>
             </div>
 
         </>

@@ -1,3 +1,12 @@
+body{
+    background-color: #D6EFD8;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.heading{
+    color: #1A5319;
+}
+
 .App{
     height: 100vh;
     padding: 0px 100px;
@@ -27,22 +36,36 @@ img{
     background-color: aquamarine;
 }
 
-.delete{
+.delete, .update , .addNewBookBtn {
     border-radius: 5px;
     border: none;
-    padding: 3px 6px;
+    padding: 6px 14px; 
     cursor: pointer;
-
+    font-size: 14px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
-.update{
-    border-radius: 5px;
-    border: none;
-    padding: 3px 6px;
-    cursor: pointer;
+.delete {
+    background-color: #e74c3c; 
+    color: white; 
 }
 
 
+.update,  .addNewBookBtn {
+    background-color: #508D4E; 
+    color: white;
+    text-decoration: none; 
+}
+
+.update a {
+    color: white; 
+    text-decoration: none; 
+}
+
+.addNewBookBtn a {
+    color: white; 
+    text-decoration: none; 
+}
 
 .form{
     display: flex;
@@ -53,15 +76,15 @@ img{
 input{
     width: 250px;
     padding: 10px;
-    border: 1px solid green;
+    border: 1px solid #508D4E;
     border-radius: 5px;
 }
 
-.updateBtn{
+.updateBtn, .addBtn{
+    border-radius: 5px;
     border: none;
     padding: 10px;
-    background-color: rgb(215, 158, 24);
+    background-color: #1A5319;
     color : white;
     cursor: pointer;
-    font-weight: bold;
 }

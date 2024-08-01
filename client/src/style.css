@@ -35,6 +35,9 @@ img{
     height: 300px;
     object-fit: cover;
     background-color: aquamarine;
+    /* box-shadow: #1A5319; */
+    border-radius: 5px;
+    /* border: 1px solid #508D4E; */
 }
 
 .delete, .update , .addNewBookBtn {

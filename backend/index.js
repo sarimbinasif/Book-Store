@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     user: "root",
     password: "sarMysql123",
     database: "test",
-    // port: "3306"
+    port: "3306"
 });
 
 app.get("/", (req, res)=>{
@@ -23,7 +23,6 @@ app.get("/", (req, res)=>{
 
 
 app.get("/books", (req, res)=>{
-    // res.json("hello from backend")
     const q= "SELECT * FROM books"
     db.query(q, (err,data) => {
         if(err) return res.json(err)
@@ -38,10 +37,8 @@ app.post("/books", (req,res)=>{
     const values = [
         req.body.title,
         req.body.description,
-        req.body.cover,
         req.body.price,
-
-     
+        req.body.cover
     ]
 
     db.query(q,[values], (err,data)=>{
@@ -64,7 +61,7 @@ app.delete("/books/:id", (req,res)=>{
 
 app.put("/books/:id", (req,res)=>{
     const bookId = req.params.id;
-    // querry order and array order of variables must be same
+    // query order and array order of variables must be same
     const q = "UPDATE books SET `title`=?, `description`=?, `cover`=?, `price`=? WHERE id=?"
 
     const values = [

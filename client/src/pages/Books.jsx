@@ -37,7 +37,7 @@ function Books() {
                         {book.cover && <img src={book.cover} alt="Book cover"/>}
                         <h2>{book.title}</h2>
                         <p>{book.description}</p>
-                        <span>{book.price}</span>
+                        <span>{book.price+"$"}</span>
                         <button className="delete" onClick={()=>handleDelete(book.id)}>Delete Book</button>
                         <button className="update">
                             <Link to={`/update/${book.id}`}>Update Book</Link>
@@ -47,7 +47,7 @@ function Books() {
                 ))}
             </div>
 
-            <button class = "addNewBookBtn"> 
+            <button className = "addNewBookBtn"> 
                 
             <Link to="/add">
                 

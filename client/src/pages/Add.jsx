@@ -15,11 +15,7 @@ function Add() {
     });
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setBook(prevBook => ({
-            ...prevBook,
-            [name]: value
-        }));
+        setBook((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
     console.log(book)
@@ -32,6 +28,7 @@ function Add() {
             navigate("/")
         } catch (err) {
             console.log(err)
+        
         }
     };
 
@@ -46,28 +43,28 @@ function Add() {
                     placeholder="Book Title here..."
                     onChange={handleChange}
                     name="title"
-                    value={book.title}
+                    // value={book.title}
                 />
-                <input
-                    type="text"
-                    placeholder="Book Description here..."
-                    onChange={handleChange}
-                    name="description"
-                    value={book.description}
-                />
+                <textarea
+        rows={5}
+        type="text"
+        placeholder="Book desc..."
+        name="description"
+        onChange={handleChange}
+      />
                 <input
                     type="number"
                     placeholder="Book Price here..."
                     onChange={handleChange}
                     name="price"
-                    value={book.price}
+                    // value={book.price}
                 />
                 <input
                     type="text"
-                    placeholder="Book Cover here..."
+                    placeholder="Cover image URL here..."
                     onChange={handleChange}
                     name="cover"
-                    value={book.cover}
+                    // value={book.cover}
                 />
             <button className="addBtn" onClick={handleClick}>Add</button>
             </div>
